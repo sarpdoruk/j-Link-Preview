@@ -1,0 +1,287 @@
+<html>
+<head>
+<title>jLinkPreview</title>
+<link rel="stylesheet" href="css/jLinkPreview.css" />
+<script src="js/jquery-1.6.1.min.js" type="text/javascript"></script>
+<script src="js/jquery-jLinkPreview-1.0.0-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+   $().jLinkPreview({
+         'preload': true,
+         'width': 256,
+         'height': 192,
+         'fade': 300,
+         'background-color': '#333',
+         'elementsHavingId': '',
+         'elementsHavingClass': 'example',
+         'attribute': 'title'
+   });
+});
+</script>
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18245222-1']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
+</head>
+<body>
+
+		<div id="wrapper">
+			<div id="site">
+				<div id="title">
+					<h1>jLinkPreview</h1>
+					<p>Hover an anchor and see it for yourself</p>
+					<a href="http://www.sarpdoruktahmaz.com">Sarpdoruk TAHMAZ</a>
+				</div>
+			
+				<h2 class="splitter">About</h2>
+			
+				<p><strong>jLinkPreview</strong> is a plug-in for jQuery Library which simply allows you to see link's preview image before you
+				visit them by just hovering on it.  Link Preview will appear by your cursor when you hover.</p>
+
+				<h2 class="splitter">Documentation</h2>
+			
+				<h3 class="header">Mechanics</h3>
+
+				<p>Plug-in detects the <strong>&lt;a&gt;</strong> tags in whole page with the given specifications
+				and enables hover Link Preview property for them.  Preview images are provided by 
+				<strong><a href="http://www.wimg.ca">wimg.ca</a></strong></p>
+			
+				<h3 class="header">Integration</h3>
+			
+			   <p>JavaScript Side:</p>
+			
+				<pre><code>$().jLinkPreview();</code></pre>			
+			   
+			   <p>HTML Side:</p>
+			
+	<pre><code>&lt;a <span class="code-source">href="http://www.sarpdoruktahmaz.com"</span>&gt;Sarpdoruk TAHMAZ&lt;/a&gt;</code></pre>
+				
+			   <p>If plug-in is called without any parameters, it uses default values, the exact output would be like
+			   <strong><a class="example" href="http://www.sarpdoruktahmaz.com">this</a></strong> for the previous call of the plug-in.</p>
+			  
+			  
+			  <h3 class="header">CSS</h3>
+			  
+			  <ul>
+			   <li>The class <code><span class="code-source">.jLinkPreview</span></code> is mandatory to use, you cannot change
+			  its name or else plug-in won't work.</li>
+			   <li>You can change border style, font properties, background color, border-radius and more by editing the
+			   the <code><span class="code-source">.jLinkPreview</span></code> class.</li>
+			  </ul>
+			  
+				<h3 class="header">Parameters</h3>
+			
+				<p>Parameters are available to use for you to customize jLinkPreview.</p>
+			
+				<pre><code>$().jLinkPreview({
+	  <span class="code-source">'preload':</span><span class="code-dest-item"> true</span>,
+	  <span class="code-source">'width':</span><span class="code-dest-item"> 256</span>,
+	  <span class="code-source">'height':</span><span class="code-dest-item"> 192</span>,
+	  <span class="code-source">'fade':</span><span class="code-dest-item"> 300</span>,
+	  <span class="code-source">'background-color':</span><span class="code-dest-item"> '#333'</span>,
+	  <span class="code-source">'elementsHavingId':</span><span class="code-dest-item"> ''</span>,
+	  <span class="code-source">'elementsHavingClass':</span><span class="code-dest-item"> ''</span>,
+	  <span class="code-source">'attribute':</span><span class="code-dest-item"> 'title'</span>
+});</code></pre>
+			
+				<p>Here are the parameters, default values, available values and descriptions:</p>
+			
+				<table>
+					<colgroup>
+						<col class="param-name">
+						<col class="param-default">
+						<col class="param-available">
+						<col class="param-desc">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">Default</th>
+							<th scope="col">Available</th>
+							<th scope="col">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code><span class="code-source">preload</span></code></td>
+							<td><code><span class="code-dest-item">true</span></code></td>
+							<td>
+							  <code><span class="code-dest-item">true</span></code><br /><br />
+							  <code><span class="code-dest-item">false</span></code>
+							</td>
+							<td>
+							<code><span class="code-dest-item">true:</span></code> Previews are loaded into the browsers
+							cache at the same time page loads.  You don't wait for previews to load.
+							<br /><code><span class="code-dest-item">false:</span></code>
+							Previews will be loaded when link are hovered which sometimes can consume time but this setting is
+							bandwidth-friendly.
+							</td>
+						</tr>
+						<tr>
+							<td><code><span class="code-source">width</span></code></td>
+							<td><code><span class="code-dest-item">256</span></code></td>
+							<td><code><span class="code-dest-item">128</span> to <code><span class="code-dest-item">512</span></code></td>
+							<td>Width of the preview.  <br />Recommended values: <br /><code><span class="code-dest-item">128</span>x96,
+							<code><span class="code-dest-item">256</span>x192, <code><span class="code-dest-item">512</span>x384</td>
+						</tr>
+						<tr>
+							<td><code><span class="code-source">height</span></code></td>
+							<td><code><span class="code-dest-item">192</span></code></td>
+							<td><code><span class="code-dest-item">96</span> to <span class="code-dest-item">384</span></code></td>
+							<td>Height of the preview.  <br />Recommended values: <br /><code>128x<span class="code-dest-item">96</span>,
+							256x<code><span class="code-dest-item">192</span>, 512x<code><span class="code-dest-item">384</span></td>
+						</tr>
+						<tr>
+							<td><code><span class="code-source">fade</span></code></td>
+							<td><code><span class="code-dest-item">300</span></code></td>
+							<td><code><span class="code-dest-item">1</span> to <span class="code-dest-item">X</span></code>
+							<td>MilliSecond (ms) value for the preview to fade-in.</td>
+						</tr>
+						<tr>
+							<td><code><span class="code-source">background-color</span></code></td>
+							<td><code><span class="code-dest-item">#333</span></code></td>
+							<td><code><span class="code-dest-item">#000</span> to <span class="code-dest-item">#FFF</span></code></td>
+							<td>Background color of the preview box.</td>
+						</tr>
+						<tr>
+							<td><code><span class="code-source">elementsHavingId</span></code></td>
+							<td><code><span class="code-dest-item">''</span></code></td>
+							<td><code><span class="code-dest-item">anyId</span></td>
+							<td>You can specify list of <code><span class="code-dest-item">id</span></code>s for plug-in to consider.
+							You can provide more than one id by sperating them with commas (,)
+							<br />Ex. <code><span class="code-dest-item">'myId,yourId,anotherId'</span></code>
+							<br />Using this property will disable other previews except elements having classes provided with
+							<code><span class="code-source">elementsHavingClass</span></code> property.
+							</td>
+						</tr>
+						<tr>
+							<td><code><span class="code-source">elementsHavingClass</span></code></td>
+							<td><code><span class="code-dest-item">''</span></code></td>
+							<td><code><span class="code-dest-item">anyClass</span></td>
+							<td>You can specify list of <code><span class="code-dest-item">class</span></code>es for plug-in to consider.
+							You can provide more than one class by sperating them with commas (,)
+							<br />Ex. <code><span class="code-dest-item">'myclass,yourClass,anotherClass'</span></code>
+							<br />Using this property will disable other previews except elements having ids provided with
+							<code><span class="code-source">elementsHavingId</span></code> property.
+							<br />For elements having more than one
+							class, it is enough to provide one of those classes to the plug-in.
+							</td>
+						</tr>
+						<tr>
+							<td><code><span class="code-source">attribute</span></code></td>
+							<td><code><span class="code-dest-item">title</span></code></td>
+							<td><code><span class="code-dest-item">any &lt;a&gt; attr</span></td>
+							<td>Attribute of the &lt;a&gt; element which contains the title for the preview box.
+							<br />Ex. <code><span class="code-dest-item">&lt;a href='...' </span>
+							<span class="code-source">title</span><span class="code-dest-item">='My Title'&gt;</span></code>
+							<br />Ex. <code><span class="code-dest-item">&lt;a href='...' </span>
+							<span class="code-source">rel</span><span class="code-dest-item">='My Title'&gt;</span></code>
+							<br />Links which don't have the provided attribute won't have any title on their previews.
+							<br /><strong>HTML5</strong> supports custom tags, you can use them as well.
+							<br />Ex. <code><span class="code-dest-item">&lt;a href='...' </span>
+							<span class="code-source">customTag</span><span class="code-dest-item">='My Title'&gt;</span></code>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<h3 class="header" id="performance">Performance</h3>
+				
+				<p>Performance of the plug-in depends on the
+				<a class="example" href="http://www.wimg.ca" title="Wimg.ca">preview image service provider.</a>
+				<br />Preview box adjusts itself automatically around the cursor, if it does not fit in browser's
+				window then it appears on the other side of the cursor.
+				</p>
+				
+				<h2 class="splitter" id="examples">Examples</h2>
+			
+				<p>
+				  Examples are based on the following settings:
+				  <pre><code>$().jLinkPreview({
+	  <span class="code-source">'preload':</span><span class="code-dest-item"> true</span>,
+	  <span class="code-source">'width':</span><span class="code-dest-item"> 256</span>,
+	  <span class="code-source">'height':</span><span class="code-dest-item"> 192</span>,
+	  <span class="code-source">'fade':</span><span class="code-dest-item"> 300</span>,
+	  <span class="code-source">'background-color':</span><span class="code-dest-item"> '#333'</span>,
+	  <span class="code-source">'elementsHavingId':</span><span class="code-dest-item"> ''</span>,
+	  <span class="code-source">'elementsHavingClass':</span><span class="code-dest-item"> ''</span>,
+	  <span class="code-source">'attribute':</span><span class="code-dest-item"> 'title'</span>
+});</code></pre>
+				  <p>
+				  <code><span class="code-source">&lt;a</span> <span class="code-source">title</span>=<span class="code-dest-item">"Google"</span> <span class="code-source">href</span>=<span class="code-dest-item">"google.com"</span></span><span class="code-source">&gt;</span>Google</span><span class="code-source">&lt;/a&gt;</span> // With a title attribute.</code>
+				  <br /><a class="example" title="Google" href="google.com">Google.com</a><br /><br />
+				  <code><span class="code-source">&lt;a</span> <span class="code-source">href</span>=<span class="code-dest-item">"youtube.com"</span></span><span class="code-source">&gt;</span>Youtube</span><span class="code-source">&lt;/a&gt;</span> // WithOUT a title attribute.</code>
+				  <br /><a class="example" href="youtube.com">Youtube.com</a><br /><br />
+				  <code><span class="code-source">&lt;a</span> <span class="code-source">title</span>=<span class="code-dest-item">"Tweeet!"</span> <span class="code-source">href</span>=<span class="code-dest-item">"twitter.com"</span></span><span class="code-source">&gt;</span>Twitter</span><span class="code-source">&lt;/a&gt;</span> // With a title attribute.</code>
+				  <br /><a class="example" title="Tweeet!" href="twitter.com">Twitter.com</a>
+				  </p>
+				</p>
+			
+				<h2 class="splitter">Download & Share</h2>
+
+				<div class="actions actions-two">
+					<p>
+						<a class="download" href="https://github.com/sarpdoruk/j-Link-Preview/zipball/master">
+							<strong>Download</strong>
+							<span>Version <span class="version">1.0.0</span> 2.6Kb</span>
+						</a>
+					</p>
+					<p>
+						<a class="fork" href="https://github.com/sarpdoruk/jQuery-Link-Preview/">
+							<strong>Fork on GitHub</strong>
+						</a>
+					</p>
+					<p>
+					 <br />
+					 <a href="http://twitter.com/share" class="twitter-share-button" data-text="jQuery Link Preview Plug-in" data-count="vertical" data-via="Sarpdoruk">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+					</p>
+					<p>
+					 <br />
+					 <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="https://www.facebook.com/pages/JQuery-Link-Preview/226159780744786" width="250" show_faces="false" border_color="" stream="false" header="true"></fb:like-box>
+					</p>
+				</div>						
+				
+				<h2 class="splitter misc">More Info</h2>
+
+				<h3 class="header">Requirements and dependencies</h3>
+			
+				<ul>
+					<li class="spaced">Required: <strong>jQuery 1.2+</strong></li>					
+				</ul>
+			
+				<h3 class="header">Browser compatibility</h3>
+
+				<ul>
+					<li>Chrome 4+</li>
+					<li>Safari 4+</li>
+					<li>Firefox 3.5+, Firefox 3.0</li>
+					<li>Opera 10.15+</li>
+				</ul>
+
+				<p><strong>Internet Explorer</strong> support is planned in upcoming versions.</p>
+
+				<h3 class="header">Licensing</h3>
+
+				<p>Copyright &#169; 2011 Sarpdoruk Tahmaz, released under <a href="http://github.com/jquery/jquery/blob/master/GPL-LICENSE.txt">GPL version 2</a> license.</p>
+			
+			</div>
+		</div>
+		
+		<p class="footer">
+			<span>Powered by <a href="http://jquery.com/">jQuery</a> - Written by <a href="http://twitter.com/sarpdoruk">@sarpdoruk</a></span>
+		</p>
+		
+		
+	
+	
+</body>
+</html>
